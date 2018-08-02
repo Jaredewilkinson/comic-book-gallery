@@ -6,26 +6,22 @@ using System.Web.Mvc;
 
 namespace ComicBookGallery.Controllers
 {
-    public class ComicBookController : Controller
+    public class ComicBooksController : Controller
     {
         public ActionResult Detail()
         {
-            ViewBag.SeriesTitle = "Super Mario 64";
+            ViewBag.SeriesTitle = "The Amazing Spider-Man";
             ViewBag.IssueNumber = 700;
             ViewBag.Description = "<p>Super Mario 64 is a 1996 platform video game developed and published by Nintendo for the Nintendo 64.<p>";
-            ViewBag.artists = new string[]
+            ViewBag.Artists = new string[]
             {
-        "Mario",
-        "Princess Peach",
-        "Bowser",
-        "Toad",
-        "Yoshi"
+                "Mario",
+                "Princess Peach",
+                "Bowser",
+                "Toad",
+                "Yoshi"
             };
-            //if (DateTime.Today.DayOfWeek == DayOfWeek.Tuesday)
-            //{
-
-            //    return View();
-            //}
+         
             return View();
 
         }
