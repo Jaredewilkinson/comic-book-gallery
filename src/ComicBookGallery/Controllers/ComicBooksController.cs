@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ComicBookGallery.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,19 +11,26 @@ namespace ComicBookGallery.Controllers
     {
         public ActionResult Detail()
         {
-            ViewBag.SeriesTitle = "The Amazing Spider-Man";
-            ViewBag.IssueNumber = 700;
-            ViewBag.Description = "<p>Super Mario 64 is a 1996 platform video game developed and published by Nintendo for the Nintendo 64.<p>";
-            ViewBag.Artists = new string[]
+            var comicBook = new ComicBook()
             {
-                "Mario",
-                "Princess Peach",
-                "Bowser",
-                "Toad",
-                "Yoshi"
+                SeriesTitle = "The Amazing Spider-Man",
+                IssueNumber = 700,
+                DescriptionHtml = "<p>Final issue!<p>",
+                Artists = new Artist[]
+                {
+                    new Artist(){ Name="Dan Slott ", Role="Script"},
+                    new Artist(){ Name="Humberto Ramos ", Role="Pencils"},
+                    new Artist(){ Name="Victor Olazaba ", Role="Ink"},
+                    new Artist(){ Name="Edgar Delgado ", Role="Colors"},
+                    new Artist(){ Name="Chris Eliopoulos ", Role="Letters"}
+                }
+
+
             };
+
+            
          
-            return View();
+            return View(comicBook);
 
         }
 
